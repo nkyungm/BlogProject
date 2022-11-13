@@ -1,5 +1,4 @@
 package blog.blog_spring;
-
 import blog.blog_spring.Repository.UserRepository;
 import blog.blog_spring.model.RoleType;
 import blog.blog_spring.model.User;
