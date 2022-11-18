@@ -1,7 +1,9 @@
 package blog.blog_spring.model;
 
 import com.sun.istack.NotNull;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
@@ -12,7 +14,7 @@ import java.sql.Timestamp;
 @Data
 @Entity //User 클래스가 MySQL에 테이블이 생성된다.
 //@DynamicInsert //insert시에 null인 필드를 제외시켜준다.
-public class User {
+public class User{
 
     @Id //Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
@@ -36,8 +38,8 @@ public class User {
 
     //DB는 RoleType이라는 게 없다.
     //@ColumnDefault("'user'") //문자라는 것을 알려줌
-    @Enumerated(EnumType.STRING)
-    private RoleType role; //Enum을 쓰는게 좋다. //ADMIN,USER
+    //@Enumerated(EnumType.STRING)
+    private String role; //Enum을 쓰는게 좋다. //ADMIN,USER
 
     @CreationTimestamp //시간이 자동으로 입력됨
     private Timestamp createDate;
