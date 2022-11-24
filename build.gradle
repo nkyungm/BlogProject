@@ -35,8 +35,11 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
+    //implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
+

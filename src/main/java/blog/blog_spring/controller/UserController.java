@@ -1,10 +1,11 @@
 package blog.blog_spring.controller;
 
 import blog.blog_spring.Repository.UserRepo;
-import blog.blog_spring.Repository.UserRepository;
-import blog.blog_spring.model.RoleType;
 import blog.blog_spring.model.User;
+import blog.blog_spring.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,11 +13,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller //View를 리턴하겠다
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired //의존성 주입(DI)
-    //private UserRepository userRepository;
-    private UserRepo userRepo;
+//    @Autowired //의존성 주입(DI)
+//    //private UserRepository userRepository;
+
+    private final UserService userService;
+
+//    @Autowired
+//    public UserController(UserService userService){
+//        this.userService=userService;
+//    }
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder; //비밀번호 암호화
@@ -52,7 +60,7 @@ public class UserController {
         String rawPassword=user.getPassword();
         String encPassword=bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
-        userRepo.save(user); //회원가입이 잘됨. 비밀번호:1234 => 시큐리티로 로그인을 할 수 없음. 이유는 패스워드가 암호화가 안되었기 때문
+        userService.save(user); //회원가입이 잘됨. 비밀번호:1234 => 시큐리티로 로그인을 할 수 없음. 이유는 패스워드가 암호화가 안되었기 때문
 
         return "redirect:/loginForm"; //redirect를 붙이면 위의 loginForm 함수로 이동
     }

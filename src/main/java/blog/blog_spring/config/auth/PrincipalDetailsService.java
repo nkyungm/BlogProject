@@ -1,7 +1,6 @@
 package blog.blog_spring.config.auth;
 
 import blog.blog_spring.Repository.UserRepo;
-import blog.blog_spring.Repository.UserRepository;
 import blog.blog_spring.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
