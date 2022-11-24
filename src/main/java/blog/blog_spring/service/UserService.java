@@ -1,5 +1,4 @@
 package blog.blog_spring.service;
-
 import blog.blog_spring.Repository.UserRepo;
 import blog.blog_spring.model.User;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-
 import javax.persistence.EntityManager;
 import java.util.Optional;
 

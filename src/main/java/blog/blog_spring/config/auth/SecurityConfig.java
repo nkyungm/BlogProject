@@ -1,5 +1,4 @@
 package blog.blog_spring.config.auth;
-
 import com.mysql.cj.protocol.AuthenticationProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.security.ConditionalOnDefaultWebSecurity;
