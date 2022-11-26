@@ -1,9 +1,7 @@
 package blog.blog_spring.model;
 
 import com.sun.istack.NotNull;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
@@ -11,7 +9,8 @@ import org.hibernate.annotations.DynamicInsert;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Data
+@Getter
+@Setter
 @Entity //User 클래스가 MySQL에 테이블이 생성된다.
 //@DynamicInsert //insert시에 null인 필드를 제외시켜준다.
 public class User{

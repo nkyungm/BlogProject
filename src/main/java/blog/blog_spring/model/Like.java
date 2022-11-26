@@ -7,18 +7,14 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-public class Post {
+public class Like {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String title;
-
-    @Column(nullable = false,columnDefinition = "LONGTEXT")
-    private String content;
-
-    
+    @ManyToOne
+    @JoinColumn(name = "user_id",nullable = false)
+    private User user;
 
 }
