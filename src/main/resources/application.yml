@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8080
   servlet:
     context-path: /
     encoding:
@@ -21,7 +21,8 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update #create update none
+      ddl-auto: create #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: true #과거 버전과의 호환성 유지 위해 기본값 false, 기존 하이버네이트 시스템 유지보수 아니면 반드시 true로 설정
     show-sql: true

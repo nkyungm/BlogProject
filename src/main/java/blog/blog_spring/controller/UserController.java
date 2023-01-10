@@ -45,12 +45,12 @@ public class UserController {
 
     @GetMapping("/loginForm")
     public String loginForm(){
-        return "loginForm";
+        return "user/loginForm";
     }
 
     @GetMapping("/joinForm")
     public String joinForm(){
-        return "joinForm";
+        return "user/joinForm";
     }
 
     @PostMapping("/join")

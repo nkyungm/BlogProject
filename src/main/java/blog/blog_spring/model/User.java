@@ -8,6 +8,8 @@ import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,7 +22,7 @@ public class User{
     // : mysql의 경우 auto_increment 따라감
     private Long id; //시퀀스, auto_increment
 
-    @Column(nullable = false,length=50,unique = true)
+    @Column(nullable = false,length=50)
     private String username;
 
     @Column(nullable = false,length=30)
@@ -32,14 +34,11 @@ public class User{
     @Column(nullable = false,length=100)
     private String password;
 
-    @Column(nullable = false,length=50)
+    @Column(nullable = false,length=50,unique = true)
     private String email;
 
     //DB는 RoleType이라는 게 없다.
     //@ColumnDefault("'user'") //문자라는 것을 알려줌
     //@Enumerated(EnumType.STRING)
     private String role; //Enum을 쓰는게 좋다. //ADMIN,USER
-
-    @CreationTimestamp //시간이 자동으로 입력됨
-    private Timestamp createDate;
 }
