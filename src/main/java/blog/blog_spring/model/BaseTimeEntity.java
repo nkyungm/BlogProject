@@ -20,6 +20,6 @@ public class BaseTimeEntity {
     @Column(nullable = false)
     private LocalDate createdDate;
 
-//    @LastModifiedDate //조회한 Entity의 값을 변경할 때 시간이 자동 저장
-//    private LocalDateTime modifiedDate;
+    @LastModifiedDate //조회한 Entity의 값을 변경할 때 시간이 자동 저장
+    private LocalDateTime modifiedDate;
 }

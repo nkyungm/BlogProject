@@ -19,10 +19,9 @@ public class UserRepo {
         this.em = em;
     }
 
-    public User save(User user){
-        Assert.notNull(user,"Entity must not be null");
+    public User save(User user) {
+        Assert.notNull(user, "Entity must not be null");
         em.persist(user);
-
         return user;
     }
 

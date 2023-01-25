@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Setter
 @Entity //User 클래스가 MySQL에 테이블이 생성된다.
+@Setter
 //@DynamicInsert //insert시에 null인 필드를 제외시켜준다.
 public class User{
 
@@ -41,4 +41,5 @@ public class User{
     //@ColumnDefault("'user'") //문자라는 것을 알려줌
     //@Enumerated(EnumType.STRING)
     private String role; //Enum을 쓰는게 좋다. //ADMIN,USER
+
 }

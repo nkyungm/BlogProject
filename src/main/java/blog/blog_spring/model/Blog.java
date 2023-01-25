@@ -1,10 +1,13 @@
 package blog.blog_spring.model;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 public class Blog {
 
     @Id //Primary key
@@ -17,5 +20,6 @@ public class Blog {
     @OneToOne
     @JoinColumn(name = "user_id",nullable = false)
     private User user;
+
 
 }

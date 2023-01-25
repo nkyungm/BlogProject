@@ -18,7 +18,6 @@ public class UserController {
 
 //    @Autowired //의존성 주입(DI)
 //    //private UserRepository userRepository;
-
     private final UserService userService;
 
 //    @Autowired
@@ -34,8 +33,8 @@ public class UserController {
         return "index";
     }
     @GetMapping("/user")
-    public @ResponseBody String user(){
-        return "user";
+    public String user(){
+        return "user/userpage";
     }
 
     @GetMapping("/admin")
